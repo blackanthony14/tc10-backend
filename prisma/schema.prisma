@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model citas {
+  id             Int    @id @default(autoincrement())
+  nombre         String @db.VarChar(200)
+  metodoContacto String @db.VarChar(100)
+  telefono       String
+  correo         String @db.VarChar(100)
+  fecha          String
+  horas          String
+}
